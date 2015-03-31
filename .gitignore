@@ -1,0 +1,14 @@
+.DS_Store
+.vagrant
+build
+Vagrantfile
+*.o
+dev/
+.sconsign.dblite
+xunit.xml
+*.gcno
+*.os
+*.cpp_
+*._cpp
+*.hpp_
+*._hpp
