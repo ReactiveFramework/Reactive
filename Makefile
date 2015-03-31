@@ -17,7 +17,7 @@ install:
 	@scons $(SCONSOPTS) install
 
 test:
-	@ulimit -n 2048
+	@ulimit -n 2048 || true
 	@scons MODE=$(MODE) $(SCONSOPTS) test
 	@./build/unit_tests/test_reactive --log_level=error --detect_memory_leaks=1 --report_level=detailed --report_format=xml 2> xunit.xml
 	@mkdir -p ./build/valgrind
@@ -27,7 +27,7 @@ massif: demo
 	@valgrind --tool=massif --time-unit=B ./build/demo/demo_web_application
 
 cov:
-	@ulimit -n 2048
+	@ulimit -n 2048 || true
 	@scons $(SCONSOPTS) cov
 	@./build/unit_tests/test_reactive
 	@gcovr -d -r .
