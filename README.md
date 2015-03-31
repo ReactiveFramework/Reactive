@@ -1,4 +1,4 @@
-Reactive Framework
+Reactive Framework [![Build Status](https://travis-ci.org/ReactiveFramework/Reactive.svg?branch=master)](https://travis-ci.org/ReactiveFramework/Reactive)
 ==================
 
 Reactive is a C++11 asynchronous http server framework.
