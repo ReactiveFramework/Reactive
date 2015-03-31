@@ -12,12 +12,12 @@ libdeps  = [''];
 # comma separated list for external libs
 extdeps  = [
     'curl',
-    'libboost_regex-mt',
-    'boost_system-mt',
-    'boost_thread-mt',
+    'libboost_regex',
+    'boost_system',
+    'boost_thread',
     'pthread',
     'boost_program_options',
-    'boost_iostreams-mt',
+    'boost_iostreams',
     'cryptopp',
     'http_parser',
     'uv',
@@ -26,12 +26,12 @@ extdeps  = [
 # comma separated list for external libs used by the test suite
 testdeps = [
     'curl',
-    'libboost_regex-mt',
-    'boost_system-mt',
-    'boost_thread-mt',
+    'libboost_regex',
+    'boost_system',
+    'boost_thread',
     'pthread',
     'boost_program_options',
-    'boost_iostreams-mt',
+    'boost_iostreams',
     'cryptopp',
     'http_parser',
     'uv',
