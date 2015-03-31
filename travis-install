@@ -22,7 +22,7 @@ git clone https://github.com/joyent/http-parser.git
 cd http-parser/
 make install --quiet
 
-svn checkout https://svn.code.sf.net/p/cryptopp/code/tags/CRYPTOPP_5_6_1/ cryptopp --quiet
+svn checkout https://svn.code.sf.net/p/cryptopp/code/trunk/c5 cryptopp --quiet
 cd cryptopp/
 make static dynameic
 sudo make install PREFIX=/usr/local
