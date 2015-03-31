@@ -6,11 +6,12 @@ before_install:
     - sudo apt-get -qq install python-software-properties
     - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
     - sudo apt-get -qq update
-    - sudo apt-get -qq install gcc-4.8 g++-4.8
+    - sudo apt-get -qq install build-essential gcc-4.8 g++-4.8
     - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
     - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
     - sudo apt-get -qq install valgrind curl libicu-dev libcrypto++-dev
     - $CXX --version
+    - sudo ./travis-install
 script: make test
 os:
     - linux
