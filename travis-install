@@ -18,8 +18,7 @@ sh autogen.sh
 make
 make install
 
-wget -O http-parser-v2.4.2.tar.gz https://github.com/joyent/http-parser/archive/v2.4.2.tar.gz
-tar -xzf http-parser-v2.4.2.tar.gz
-cd http-parser-2.4.2/
+git clone https://github.com/joyent/http-parser.git
+cd http-parser/
 make install
 
