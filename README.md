@@ -1,6 +1,8 @@
 Reactive Framework [![Build Status](https://travis-ci.org/ReactiveFramework/Reactive.svg?branch=master)](https://travis-ci.org/ReactiveFramework/Reactive)
 ==================
 
+![alt text](https://github.com/ReactiveFramework/Reactive/raw/master/_resources/logo.svg "Reactive logo")
+
 Reactive is a C++11 asynchronous http server framework.
 
 Example
@@ -190,6 +192,7 @@ int main(int argc, char const *argv[])
 Dependencies
 ------------
 
+* GCC 4.8
 * scons
 * boost
 * cryptopp
@@ -197,6 +200,10 @@ Dependencies
 * libuv
 * curl
 * icu
+
+~~~shell
+emerge -av dev-libs/boost dev-libs/icu dev-libs/libuv net-libs/http-parser net-misc/curl dev-libs/crypto++ dev-util/scons
+~~~
 
 Build
 -----
