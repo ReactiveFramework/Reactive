@@ -106,7 +106,7 @@ namespace cookie {
             {
                 struct tm tm = {0};
                 strptime(value_.c_str(), "%a, %d-%b-%Y %H:%M:%S %Z", &tm);
-                cookie_.expires = mktime(&tm);
+                cookie_.expires = timegm(&tm);
             }
             else if (name == "max-age")
             {
