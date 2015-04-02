@@ -291,7 +291,7 @@ namespace http {
         }
     }
 
-    void server::onAfterRead(uv_stream_t* tcp_, long int nread_, const uv_buf_t* buf_)
+    void server::onAfterRead(uv_stream_t* tcp_, ssize_t nread_, const uv_buf_t* buf_)
     {
         connection_t* connection = (connection_t*)tcp_->data;
 
