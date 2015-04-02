@@ -215,7 +215,7 @@ namespace http {
          * @param nread_ [description]
          * @param buf_   [description]
          */
-        static void onAfterRead(uv_stream_t* tcp_, long int nread_, const uv_buf_t* buf_);
+        static void onAfterRead(uv_stream_t* tcp_, ssize_t nread_, const uv_buf_t* buf_);
 
         /**
          * Close write
