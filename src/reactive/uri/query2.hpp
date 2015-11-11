@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   query2.cpp                                         :+:      :+:    :+:   */
+/*   query2.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwells <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/11 12:40:21 by gwells            #+#    #+#             */
-/*   Updated: 2015/11/11 14:30:36 by gwells           ###   ########.fr       */
+/*   Created: 2015/11/11 12:41:45 by gwells            #+#    #+#             */
+/*   Updated: 2015/11/11 14:29:17 by gwells           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "query2.hpp"
-
-void query::parse(const char *query)
+class query
 {
-    ft_putendl(query);
-}
+    public:
+        /**
+         * Parse the content an put it in linked list
+         */
+
+        query() {}
+        void parse(const char *query);
+};

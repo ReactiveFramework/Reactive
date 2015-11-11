@@ -12,3 +12,5 @@ xunit.xml
 *._cpp
 *.hpp_
 *._hpp
+libft.h
+libft.a

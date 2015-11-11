@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   query2.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwells <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/11 12:41:45 by gwells            #+#    #+#             */
-/*   Updated: 2015/11/11 12:44:03 by gwells           ###   ########.fr       */
+/*   Created: 2015/11/11 14:09:44 by gwells            #+#    #+#             */
+/*   Updated: 2015/11/11 14:29:51 by gwells           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-class query
+#include "query2.hpp"
+#include <stdlib.h>
+#include "libft.h"
+
+int main(int argc, char **argv)
 {
-    public:
-        /**
-         * Parse the content an put it in linked list
-         */
-        void parse(char *query);
-};
+    if (argc != 2)
+        ft_quit("Enter one argument Pls", 2, EXIT_FAILURE);
+
+    query test;
+
+    test.parse(argv[1]);
+
+    return (0);
+}
