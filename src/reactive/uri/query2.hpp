@@ -6,9 +6,11 @@
 /*   By: gwells <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/11 12:41:45 by gwells            #+#    #+#             */
-/*   Updated: 2015/11/11 14:29:17 by gwells           ###   ########.fr       */
+/*   Updated: 2015/11/11 15:39:51 by gwells           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 class query
 {
@@ -18,5 +20,6 @@ class query
          */
 
         query() {}
-        void parse(const char *query);
+        t_list *parse(const char *query);
+
 };

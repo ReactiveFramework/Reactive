@@ -20,8 +20,8 @@ Je parcours la query de A a Z
     Je parcours jusqu'au egale
         Si il n'y a pas de egale error
         Je parcours jusqu'au [ s'il y en a
-            J'enregistre le premier elemtent dans path en enlevant les guillemets si pas de guillemets ouvrant fermant error
             Si il y a un [ je parcours jusqu'au ] et remplis le path
+                Je regarde si il ya ds guillemets sinon error je recupere l'interrieur sans ceux ci
                 Si il n'y a pas de ] error
         Je fait ainsi de suite tant que [ se suivent. 
 
