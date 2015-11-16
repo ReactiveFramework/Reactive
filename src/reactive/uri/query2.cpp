@@ -18,8 +18,10 @@ t_list *query::parse(const char *query)
 {
     t_list          *begin;
     char            *path; 
+    char            *value;
     const char      *error;
     bool            flag;
+    bool            count;
 
 
     if (!ft_strlen(query))
@@ -27,11 +29,13 @@ t_list *query::parse(const char *query)
 
     error = "Bad syntax";
     path = ft_strdup("");
+    value = ft_strdup("");
+    count = false;
     
     while (*query)
     { 
         flag = false;
-        if (*query != '[')
+        if (*query != '[' && *query != '=')
             path = ft_append_char(path, *query);
         if (*query == '[')
         {
@@ -50,12 +54,24 @@ t_list *query::parse(const char *query)
                         path = ft_append_char(path, *query);
                         query++;
                     }
-                    if (!*query || (*(query - 1) != '\'' && *(query - 1) != '\"'))
+                    if (!*query || (*(query - 1) != '\'' && *(query - 1) != '\"')
+                        || (*(query + 1) != '=' && *(query + 1) != '[' && *(query + 1)))
                         ft_quit(error, 2, EXIT_FAILURE);
                     path[ft_strlen(path) - 1] = '\0';
                 } 
             }
             flag = true;
+        }
+        if (*query == '=')
+        {
+            query++;
+            while(*query  && *query != '&')
+            {
+                value = ft_append_char(value, *query);
+                query++;
+            }
+            ft_putendl(value);
+            ft_putendl(path);
         }
         if (*query && flag)
             query++;
@@ -63,7 +79,7 @@ t_list *query::parse(const char *query)
             query++;
     } 
 
-    ft_putendl(path);
+    //ft_putendl(path);
     return (begin);
 }
 
