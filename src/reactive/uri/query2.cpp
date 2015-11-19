@@ -50,6 +50,7 @@ t_dlist *query::parse(const char *query)
     path = ft_strdup("");
     value = ft_strdup("");
     count = false;
+    lst = ft_dlstnew();
     
     while (*query)
     { 
@@ -59,7 +60,12 @@ t_dlist *query::parse(const char *query)
         if (*query == '[')
         {
             if (*(query + 1) == ']')
-                ft_strjoin(path, ":index");
+            {
+                path = ft_strjoin(path, ":index");
+                queryh=2;
+                if (*query != '=')
+                    ft_quit(error, 2, EXIT_FAILURE);
+            }
             else
             {
                 if (*(query + 1) != '\'' && *(query + 1) != '\"')
@@ -83,9 +89,7 @@ t_dlist *query::parse(const char *query)
         }
         if (*query == '=')
         {
-
             query++;
-            lst = ft_dlstnew();
             while(*query  && *query != '&')
             {
                 value = ft_append_char(value, *query);
@@ -95,6 +99,8 @@ t_dlist *query::parse(const char *query)
             content.value = value;
             node = ft_dlstnewnode(&content, sizeof(content));
             ft_dlstpushback(lst, node);
+            path = ft_strdup("");
+            value = ft_strdup("");
         }
         if (*query && flag)
             query++;
