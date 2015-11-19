@@ -13,8 +13,24 @@
 #include "libft.h"
 #include "query2.hpp"
 #include <stdlib.h>
+#include <stdio.h>
 
-t_list *query::parse(const char *query)
+void    query::printlist(t_dlist *lst)
+{
+    t_content   *content;
+    t_dnode     *node;
+
+    node = lst->head;
+    while(node)
+    {
+        content = (t_content*)node->content;
+        printf("Voici le path %s\n", content->path);
+        printf("Voici la value %s\n", content->value);
+        node = node->next;
+    }
+}
+
+t_dlist *query::parse(const char *query)
 {
     t_list          *begin;
     char            *path; 
@@ -22,6 +38,9 @@ t_list *query::parse(const char *query)
     const char      *error;
     bool            flag;
     bool            count;
+    t_content       content;
+    t_dlist         *lst;
+    t_dnode         *node; 
 
 
     if (!ft_strlen(query))
@@ -64,23 +83,24 @@ t_list *query::parse(const char *query)
         }
         if (*query == '=')
         {
+
             query++;
+            lst = ft_dlstnew();
             while(*query  && *query != '&')
             {
                 value = ft_append_char(value, *query);
                 query++;
             }
-            ft_putendl(value);
-            ft_putendl(path);
+            content.path = path;
+            content.value = value;
+            node = ft_dlstnewnode(&content, sizeof(content));
+            ft_dlstpushback(lst, node);
         }
         if (*query && flag)
             query++;
         if (*query && !flag)
             query++;
     } 
-
-    //ft_putendl(path);
-    return (begin);
+    printlist(lst);
+    return (lst);
 }
-
-

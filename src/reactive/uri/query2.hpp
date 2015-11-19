@@ -14,12 +14,22 @@
 
 class query
 {
+    private:
+        typedef struct  s_content
+        {
+            char        *path;
+            char        *value;
+        }               t_content;
+
+        void    printlist(t_list *lst);
+
     public:
         /**
          * Parse the content an put it in linked list
          */
 
         query() {}
-        t_list *parse(const char *query);
+        t_dlist  *parse(const char *query);
+        void    printlist(t_dlist*);
 
 };
