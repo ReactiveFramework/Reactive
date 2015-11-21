@@ -1,4 +1,4 @@
-.DS_Store
+.S_Store
 .vagrant
 build
 Vagrantfile
@@ -12,3 +12,6 @@ xunit.xml
 *._cpp
 *.hpp_
 *._hpp
+libft.h
+libft.a
+objectif
