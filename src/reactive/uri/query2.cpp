@@ -77,6 +77,7 @@ t_list *query::parse(const char *query)
                             || (*(query + 1) != '=' && *(query + 1) != '[' && *(query + 1)))
                         ft_quit(error, 2, EXIT_FAILURE);
                     path[ft_strlen(path) - 1] = '\0';
+                    path = changeString(path, ft_strdup(path));
                 } 
             }
             flag = true;
@@ -89,12 +90,12 @@ t_list *query::parse(const char *query)
                 value = changeString(value, ft_append_char(value, *query));
                 query++;
             }
-            content.path = path;
-            content.value = value;
+            content.path = ft_strdup(path);
+            content.value = ft_strdup(value);
             node = ft_lstnew(&content, sizeof(content));
             ft_lstpushback(&begin, node);
-            //ft_strdel(&path);
-            //ft_strdel(&value);
+            ft_strdel(&path);
+            ft_strdel(&value);
             path = ft_strdup("");
             value = ft_strdup("");
         }
@@ -104,6 +105,8 @@ t_list *query::parse(const char *query)
             query++;
     } 
     printlist(begin);
+    ft_strdel(&path);
+    ft_strdel(&value);
     return (begin);
 }
 

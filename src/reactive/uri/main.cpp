@@ -35,8 +35,8 @@ int main(int argc, char **argv)
 
     delfunc = dellist;
 
-    test.parse(argv[1]);
-    //ft_lstdel(&lst, delfunc);
+    lst = test.parse(argv[1]);
+    ft_lstdel(&lst, delfunc);
     return (0);
 }
 
@@ -47,4 +47,5 @@ void    dellist(void* content, size_t size)
     tmp = (t_content*)content;
     free(tmp->path);
     free(tmp->value);
+    free(content);
 }
