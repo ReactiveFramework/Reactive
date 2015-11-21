@@ -21,15 +21,18 @@ class query
             char        *value;
         }               t_content;
 
-        void    printlist(t_list *lst);
+        /**
+         * Debug function
+         */
+        void    printlist(t_list* lst);
+        char    *changeString(char* old, char *ret);
 
     public:
-        /**
-         * Parse the content an put it in linked list
-         */
 
         query() {}
-        t_dlist  *parse(const char *query);
-        void    printlist(t_dlist*);
+        /**
+         * Parse the content and put it in linked list
+         */
+        t_list  *parse(const char *query);
 
 };
